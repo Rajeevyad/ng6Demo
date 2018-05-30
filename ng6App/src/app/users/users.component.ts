@@ -20,5 +20,7 @@ export class UsersComponent implements OnInit {
     .subscribe((data: User[]) => {
         this.users = data;
       });
+
+    
   }
 }
