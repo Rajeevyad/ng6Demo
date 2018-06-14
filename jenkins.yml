@@ -14,6 +14,7 @@ node
     stage 'Build'
      dir('ng6App') 
       {
+        bat 'npm install'
         bat 'ng build --prod'
       }         
     
