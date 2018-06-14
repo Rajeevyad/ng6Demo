@@ -14,7 +14,7 @@ node
     stage 'Build'
      dir('ng6App') 
       {
-        bat 'ng build'
+        bat 'ng build --prod'
       }         
     
     notify('BUILD SUCCESSFUL')     
