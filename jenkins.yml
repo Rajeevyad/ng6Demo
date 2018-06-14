@@ -1,0 +1,30 @@
+node
+{
+    stage 'GitHub'
+    try 
+    {
+        echo 'Getting data from Github.........'
+        git 'https://github.com/Rajeevyad/ng6Demo.git'
+      
+    } catch (err) {
+        echo "Caught: ${err}"
+        currentBuild.result = 'FAILURE'
+    }
+
+    stage 'Build'
+     dir('ng6App') 
+      {
+        bat 'ng build'
+      }         
+    
+    notify('BUILD SUCCESSFUL')     
+}
+
+
+def notify(status)
+{
+    node
+    {
+     echo "BuildNumber: ${BUILD_NUMBER} ----JOB NAME: ${JOB_NAME}"
+    }
+}
