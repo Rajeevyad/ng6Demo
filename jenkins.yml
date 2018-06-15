@@ -21,7 +21,7 @@ node
     stage 'Test'
      dir('ng6App') 
       {
-        bat 'ng test --browsers ChromeHeadless'
+        bat 'ng test --single-run=true --browsers ChromeHeadless'
       }    
     
     notify('BUILD SUCCESSFUL')     
