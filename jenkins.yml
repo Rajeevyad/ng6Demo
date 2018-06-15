@@ -16,7 +16,13 @@ node
       {
         bat 'npm install'
         bat 'ng build --prod'
-      }         
+      } 
+      
+    stage 'Test'
+     dir('ng6App') 
+      {
+        bat 'ng test'
+      }    
     
     notify('BUILD SUCCESSFUL')     
 }
